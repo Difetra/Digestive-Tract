@@ -1,12 +1,12 @@
 ## Stomach
 
-Accepts [items](#item) and breaks them down into [chyme](#chyme). Chyme is steadily transferred to the [intestines](#intestine) for further digestion. Indigestible items small enough to pass through the stomach will also be passed along to the intestines in time. Items too big to pass will remain until thrown up.
+Accepts [items](#Item) and breaks them down into [chyme](#Chyme). Chyme is steadily transferred to the [intestines](#Intestine) for further digestion. Indigestible items small enough to pass through the stomach will also be passed along to the intestines in time. Items too big to pass will remain until thrown up.
 
 ### Properties
 
 | Name               | Description                                                  | Type   |
 | ------------------ | ------------------------------------------------------------ | ------ |
-| content            | array of [Items](#item) to be broken down in the stomach    | array  |
+| content            | array of [Items](#Item) to be broken down in the stomach    | array  |
 | volume             | current stomach volume                                       | float  |
 | capacity           | maximum volume of the stomach before becoming sick           | float  |
 | breakdown_rate     | rate of item breakdown into chyme                            | float  |
@@ -41,9 +41,27 @@ These properties were chosen for ease of scaling for portions of food to volume.
 - water_content - Part of me would like to keep the system of measurement for ratio consistent. gravimetric water content may be more consistent. Still thinking about how that might affect different interactions (like an item that could absorb water and expand in the stomach). 
 - integrity - The rate of item breakdown increases as integrity lowers simulating additional surface area exposed by the digestive process. Not strictly a necessary number, but it adds a bit of additional realism in nicely fudgeable way and another way to balance how digestion works. 
 
+## Chyme
+
+The digestive soup items a broken down into. Any unique properties of the original item are reduced down to the properties of Chyme.
+
+### Properties
+
+ 
+
+| Name          | Description                        | Type  |
+| ------------- | ---------------------------------- | ----- |
+| kcal          | kcal content of the chyme          | float |
+| solid_volume* | volume of solid matter             | float |
+| water_volume  | volume of water content            | float |
+| density*      | kg/m^3 (970 typical chyme density) | float |
+
+- solid_volume - I'm rethinking how chyme volume works. I'm thinking instead having a single `volume` property and a property for indigestible material (like fiber). Need to think about how that works with kcal and water absorption.
+- density - Chyme in my reading tends to be  of a somewhat consistent density thanks to digestive fluids and the way the stomach contents breakdown. Although I think with this model if a considerably dense item was broken down there could be a drastic increases in volume. Not an issue for most actually edible things I don't think. On the flip side something with a very low density like a cheese puff would be appropriately reduced in volume.  
+
 ## Intestine
 
-Where food is absorbed as it is transported through the digestive tract. The intestines are made up of intestine objects linked together by input and output. Each intestine segment works to digest [chyme](#chyme) absorbing both liquid and kcals. Intestines may also pass [items](#item) which are most often indigestible. Each segment has a maximum volume which can be occupied by both chyme and items. 
+Where food is absorbed as it is transported through the digestive tract. The intestines are made up of intestine objects linked together by input and output. Each intestine segment works to digest [chyme](#Chyme) absorbing both liquid and kcals. Intestines may also pass [items](#Item) which are most often indigestible. Each segment has a maximum volume which can be occupied by both chyme and items. 
 
 ### properties
 
