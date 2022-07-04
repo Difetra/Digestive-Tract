@@ -1,20 +1,20 @@
 ## Stomach
 
-Accepts [items](##item) and breaks them down into [chyme](##chyme). Chyme is steadily transferred to the [intestines](##intestine) for further digestion. Indigestible items small enough to pass through the stomach will also be passed along to the intestines in time. Items too big to pass will remain until thrown up.
+Accepts [items](#item) and breaks them down into [chyme](#chyme). Chyme is steadily transferred to the [intestines](#intestine) for further digestion. Indigestible items small enough to pass through the stomach will also be passed along to the intestines in time. Items too big to pass will remain until thrown up.
 
 ### Properties
 
 | Name               | Description                                                  | Type   |
 | ------------------ | ------------------------------------------------------------ | ------ |
-| content            | array of [Items](##item) to be broken down in the stomach    | array  |
+| content            | array of [Items](#item) to be broken down in the stomach    | array  |
 | volume             | current stomach volume                                       | float  |
 | capacity           | maximum volume of the stomach before becoming sick           | float  |
 | breakdown_rate     | rate of item breakdown into chyme                            | float  |
 | empty_rate         | mL/minute may be affected by liquid content and caloric density | float  |
 | liquid_empty_mult  | multiplier to empty_rate for liquids                         | float  |
-| digestion_strength | maximum [item](##Item) toughness that can be broken down     | float  |
-| chyme              | the stomach's [chyme](##Chyme) object                        | object |
-| output             | Object [chyme](##Chyme) contents and [items](##Item) are transferred to. In most cases the [intestines](##Intestine) |        |
+| digestion_strength | maximum [item](#Item) toughness that can be broken down     | float  |
+| chyme              | the stomach's [chyme](#Chyme) object                        | object |
+| output             | Object [chyme](#Chyme) contents and [items](#Item) are transferred to. In most cases the [intestines](#Intestine) |        |
 | gas_volume         | volume of gas in the stomach - not currently used.           | float  |
 
 
@@ -43,7 +43,7 @@ These properties were chosen for ease of scaling for portions of food to volume.
 
 ## Intestine
 
-Where food is absorbed as it is transported through the digestive tract. The intestines are made up of intestine objects linked together by input and output. Each intestine segment works to digest [chyme](##chyme) absorbing both liquid and kcals. Intestines may also pass [items](##item) which are most often indigestible. Each segment has a maximum volume which can be occupied by both chyme and items. 
+Where food is absorbed as it is transported through the digestive tract. The intestines are made up of intestine objects linked together by input and output. Each intestine segment works to digest [chyme](#chyme) absorbing both liquid and kcals. Intestines may also pass [items](#item) which are most often indigestible. Each segment has a maximum volume which can be occupied by both chyme and items. 
 
 ### properties
 
@@ -53,9 +53,9 @@ Where food is absorbed as it is transported through the digestive tract. The int
 | absorb_rate | kcal/min absorbed by a segment                          | float  |
 | efficiency* | proportion of solid volume absorbed per kcal            | float  |
 | motility*   | mL/min of material moved through a segment?             | float  |
-| chyme       | Intestine segment's [chyme](##Chyme) object             | Object |
-| contents    | Array of [items](##Item) occupying the segment          | Array  |
-| input       | The [stomach](##Stomach) or preceding intestine segment | Object |
+| chyme       | Intestine segment's [chyme](#Chyme) object             | Object |
+| contents    | Array of [items](#Item) occupying the segment          | Array  |
+| input       | The [stomach](#Stomach) or preceding intestine segment | Object |
 | output      | The next Intestine segment or anus                      | Object |
 | gas_volume  | volume of gas in the segment - unused                   | float  |
 
@@ -76,7 +76,7 @@ Currently handles filling the bladder from absorbed water. Attempting to do so i
 
 ## Bladder
 
-Holds urine added by the [metabolism](##Metabolism) and handles functions related to the holding and release of urine.
+Holds urine added by the [metabolism](#Metabolism) and handles functions related to the holding and release of urine.
 
 ### properties
 
