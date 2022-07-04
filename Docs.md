@@ -52,8 +52,8 @@ The digestive soup items a broken down into. Any unique properties of the origin
 | Name          | Description                        | Type  |
 | ------------- | ---------------------------------- | ----- |
 | kcal          | kcal content of the chyme          | float |
-| solid_volume* | volume of solid matter             | float |
-| water_volume  | volume of water content            | float |
+| solid_volume* | volume of solid matter in mL       | float |
+| water_volume  | volume of water content in mL      | float |
 | density*      | kg/m^3 (970 typical chyme density) | float |
 
 - solid_volume - I'm rethinking how chyme volume works. I'm thinking instead having a single `volume` property and a property for indigestible material (like fiber). Need to think about how that works with kcal and water absorption.
