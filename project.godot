@@ -1,0 +1,63 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Label",
+"class": "Bladder",
+"language": "GDScript",
+"path": "res://Bladder.gd"
+}, {
+"base": "Node",
+"class": "Chyme",
+"language": "GDScript",
+"path": "res://Chyme.gd"
+}, {
+"base": "Label",
+"class": "Intestine",
+"language": "GDScript",
+"path": "res://Intestine.gd"
+}, {
+"base": "Node",
+"class": "Item",
+"language": "GDScript",
+"path": "res://Item.gd"
+}, {
+"base": "Node",
+"class": "Metabolism",
+"language": "GDScript",
+"path": "res://Metabolism.gd"
+}, {
+"base": "Label",
+"class": "Stomach",
+"language": "GDScript",
+"path": "res://Stomach.gd"
+} ]
+_global_script_class_icons={
+"Bladder": "",
+"Chyme": "",
+"Intestine": "",
+"Item": "",
+"Metabolism": "",
+"Stomach": ""
+}
+
+[application]
+
+config/name="Digestion"
+run/main_scene="res://DigestiveTract.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://Global.gd"
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
