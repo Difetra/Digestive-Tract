@@ -5,7 +5,7 @@ class_name Intestine
 var capacity: float = 200 #maximum segment volume, may be exceeded causing pain and potentially rupture. 
 var absorb_rate: float = 5.8 #kcal/min
 var effeciency: float = 0.8 #proportion of solid volume absorbed per kcal. 
-var motility: float = 20 #ml per fuck it 
+var motility: float = 144 #minutes... mL/minute? interval? what do
 var chyme: Chyme = Chyme.new() #digestive matter
 var contents: Array = [] #item contents of segment
 var gas_volume: float = 0
@@ -58,14 +58,15 @@ func digest() -> Dictionary:
 	
 	#absorption stage
 	var absorb_solid = absorb_rate * effeciency
-	var absorb_liquid = chyme.liquid_volume/chyme.solid_volume # A basic urinary system will go on to process liquids into the bladder. 
+	var absorb_liquid = chyme.liquid_volume/chyme.solid_volume # this seems entirely arbitrary. Will change that.
 	chyme.solid_volume -= absorb_solid
 	chyme.liquid_volume -= absorb_liquid
 	chyme.kcal = chyme.kcal - absorb_rate # will have some kind of metabolism to do something with calories one day.
 	
 	return {"solid": absorb_solid, "liquid": absorb_liquid, "kcal": absorb_rate} 
 
-func peristalsis() -> void:
+func peristalsis(delta: float) -> void:
+	# awaiting a unit of travel to be decided 
 	var move_chyme = Chyme.new()
 	move_chyme.solid_volume = 
 	move_chyme.water_volume = 

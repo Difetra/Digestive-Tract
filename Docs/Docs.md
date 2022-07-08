@@ -110,9 +110,36 @@ Holds urine added by the [metabolism](#Metabolism) and handles functions related
 
 - Adding indigestible fiber as a property of food to affect stool bulk. Could either be a made a property of chyme or broken down into it's own entity to travel like other indigestible objects.
 	- In practice fiber would be more closely linked to the behavior of chyme and travel with it as such.
-	- Using indigestible matter as a property of chyme to determine what will remain as stool may make more sense than the current approach which is somewhat arbitrary. Dead bacteria could also be added to the indigestible matter as chyme travels along.
+	- Using indigestible matter as a property of chyme to determine what will remain as stool may make more sense than the current approach which is somewhat arbitrary.
 - Chyme is handled as fluid mass able to gradually move through the intestines. Swallowed indigestible objects small enough move through the intestines as a whole. One edge case that is missing is indigestible fluids that would not move as a whole. Unifying how fluids move would lend some flexibility with what I can do. 
 	- Following that line of thought creating standards for the movement of fluids, solids, and gases would make sense. 
 	- fluids - volume of fluid can gradually shift through the system and around solids
 	- solids - an object that moves as a whole. 
 	- gas - similar to an indigestible fluids with a very low density. In fact, it might make sense to treat them the same. 
+- Hydration may need to be tracked to curtail some undesirable effects of adding digestive fluids to reach appropriate chyme density. A buffer between absorption of water and the bladder would make sense and pulling from that buffer for digestive fluid would help. The exponential way the bladder fills from hydration should allow for a general baseline of hydration to be available . 
+
+## MORE Notes
+
+### Digestion
+
+As kcals are absorbed a proportional solid volume is reduced. Minimum volume is dictated by undigestible_mass  which also holds onto a minimum water content based on the proportion of undigestible_mass to lets say bacterial biomass. 
+
+along the way bacterial biomass is added as volume of solid material is absorbed.
+
+ ### Absorption
+
+water absorption rate in small bowel - 0.035mL/min per cm of bowel or 2.6-7.2mL/cm/hr
+
+large intestine can absorb as much as 5 liters of water a day
+
+### Fecal Facts
+
+- average fecal density - 1.06 g/ml
+
+- average composition of mass- 75% water, solids - 25-54% bacteria biomass, 2-25% protien, 25% fiber, 2-15% undigested lipids
+
+- water mass varies with fiber intake (63-86%)
+
+- transit time increases with higher total water mass.
+
+	 
