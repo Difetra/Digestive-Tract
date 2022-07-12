@@ -17,7 +17,15 @@ Accepts [items](#Item) and breaks them down into [chyme](#Chyme). Chyme is stead
 | output             | Object [chyme](#Chyme) contents and [items](#Item) are transferred to. In most cases the [intestines](#Intestine) |        |
 | gas_volume         | volume of gas in the stomach - not currently used.           | float  |
 
+### References
 
+Advances in the physiology of gastric emptying - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6850045/
+
+---
+
+Effect of meal volume and energy density on the gastric emptying of carbohydrates  - https://pubmed.ncbi.nlm.nih.gov/4054524/
+
+`Caloric rate (kcal/min) = 0.1 + 0.0024 X volume (ml) + 0.96 x energy density (kcal/ml)`
 
 ## Item
 
@@ -128,9 +136,15 @@ along the way bacterial biomass is added as volume of solid material is absorbed
 
  ### Absorption
 
+The small intestine 
+
 water absorption rate in small bowel - 0.035mL/min per cm of bowel or 2.6-7.2mL/cm/hr
 
 large intestine can absorb as much as 5 liters of water a day
+
+### Empty Rate
+
+Stomach empty rate depends on caloric density and volume, but also can be influenced by the concentration and length of the small intestine exposed to nutrients. 
 
 ### Fecal Facts
 
@@ -143,3 +157,33 @@ large intestine can absorb as much as 5 liters of water a day
 - transit time increases with higher total water mass.
 
 	 
+
+## Digestion Outline
+
+Outlining only the process food and drink goes through.
+
+### Stomach
+
+- food enters the stomach
+- food is broken down into chyme
+- stomach gradually passes chyme to intestine
+	- empty rate determined by energy density of chyme and volume
+	- small energy density and small intestine fullness may also slow empty rate
+
+### Intestine
+
+- chyme is absorbed  as it passes through the small intestine
+	- rate of absorption should be more than sufficient to absorb available kcal throughout transit
+	- stomach emtpy rate can be slowed to allow for complete absorption with large meals. 
+	- Under extreme circumstances chyme may be forced through undigested if stomach emptying exceeds small intestine capacity for absorption.
+- Chyme enters the large intestine with most nutrients absorbed, leaving only undigestable material, bacterial biomass, and water.
+- Chyme passes through large intestine, extra water is absorbed up to minimum water content. Fiber content increasing that minimum.
+	- rate of water absorption to be determined, especially as it might interact with rectal administration i.e. enema.
+- Chyme reaches the end of the line in the rectum now resembling the characteristics of feces. 
+
+### Metabolism
+
+The metabolism works in the background as nutrients and water is absorbed. Currently water absorbed is collected together to filter into the bladder the rate of which is determined logarithimicly up to a max excretion rate. 
+
+Absorbed calories currently have no purpose in this version, but may be used to drive other systems in the future. 
+
