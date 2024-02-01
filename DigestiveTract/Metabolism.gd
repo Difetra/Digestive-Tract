@@ -12,13 +12,16 @@ var excretion_rate: float = 13 # ml/min of urine production at maximimum rate.
 # excretion rate increases the greater the water buffer is until it reaches the excretion rate. What should water need to be to reach that rate? 
 # One diuresis study finds after (0.9-1.8 l/h x 3 h) 2.7kg of weight retained after absorption while urine production peaked at 778 ml/h. 
 # Around 2-3 Liters perhaps? Finding a chart it looks like the increase is exponetial 
+var time_scale: float = 1 
 
 func _ready():
-	bladder = Bladder.new()
-
+    bladder = Bladder.new()
+    bladder.time_scale = time_scale
+    add_child(bladder)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var ratio = min(1, water/2000) # 2,000ml water 
-	var adjusted_excretion = excretion_rate * (1 - pow(1 - ratio, 4)) #quartic easing up to excretion_rate. 
-	bladder.add((adjusted_excretion/60) * delta)
+    delta = delta * time_scale / 60
+    var ratio = min(1, water/2000) # 2,000ml water 
+    var adjusted_excretion = excretion_rate * (1 - pow(1 - ratio, 4)) #quartic easing up to excretion_rate. 
+    bladder.add((adjusted_excretion/60) * delta)

@@ -1,0 +1,3 @@
+- check for 0 or negative values before calculations. Don't need to be dividing by 0.
+- Fiber content of chyme
+- Hook up intestine digest to metabolism (should segment talk to metabolism or return digest values to intestine?)

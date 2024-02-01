@@ -11,4 +11,13 @@ var biovolume: float = 0 # bacterial biomass, protien, lipids added throughout d
 var density: float = 970 # (kg/m^3) assume a default density for now. 
 
 func water_ratio() -> void:
-	pass
+    pass
+    
+func volume() -> float:
+    return solid_volume + water_volume
+    
+func energy_density() -> float:
+    if kcal == 0 or volume() == 0:
+        return 0
+    else:
+        return kcal/volume()

@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://cgyqi7m23456v"]
+
+[ext_resource type="Script" path="res://DigestiveTract/Stomach.gd" id="1"]
+[ext_resource type="Script" path="res://DigestiveTract/Bladder.gd" id="2"]
+[ext_resource type="Script" path="res://DigestiveTract/DigestiveTract.gd" id="3"]
+
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(0.835294, 0.537255, 0.537255, 1)
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
+
+[sub_resource type="GDScript" id="2"]
+script/source = "extends Label
+"
+
+[node name="DigestiveTract" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2.0
+offset_right = 896.0
+offset_bottom = 478.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3")
+
+[node name="Stomach" type="Label" parent="."]
+layout_mode = 0
+offset_left = 960.0
+offset_top = 192.0
+offset_right = 1088.0
+offset_bottom = 320.0
+theme_override_styles/normal = SubResource("1")
+text = "Stomach"
+script = ExtResource("1")
+
+[node name="Intestine" type="Label" parent="."]
+layout_mode = 0
+offset_left = 960.0
+offset_top = 336.0
+offset_right = 1088.0
+offset_bottom = 464.0
+theme_override_styles/normal = SubResource("1")
+text = "Intestine"
+script = SubResource("2")
+
+[node name="Bladder" type="Label" parent="."]
+layout_mode = 0
+offset_left = 960.0
+offset_top = 480.0
+offset_right = 1088.0
+offset_bottom = 608.0
+theme_override_styles/normal = SubResource("1")
+text = "Bladder"
+script = ExtResource("2")

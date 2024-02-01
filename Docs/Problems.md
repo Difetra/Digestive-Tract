@@ -1,10 +1,14 @@
-- Determine water absorption rate of the intestines. Consider differentiating small and large intestine for absorption. May work in rudimentary osmolarity via metabolism hydration value. 
+Add Fiber property to items
+- insoluble can't be digested and adds bulk.
+- soluble slows digestion and retains water.
 
-- Determine intestinal motility
+## Processing fiber as a part of chyme?
 
-- calculate transit time of intestines
+**As a percentage** - Chyme is uniform so the percentage would be adjusted as new chyme is added. The percentage would determine how much of the solid volume can be absorbed, increasing as more solid volume is removed. At 100% remaining solid volume can't be absorbed.
 
-	
+**As a volume** - like solid and water volume, there could be fiber volume. Fiber volume would be added up with solid volume and moved proportionally. Would remain indigested.
+
+I'm leaning towards a percentage just so I don't have another volume to keep track of. Though that begs the question that chyme could be one volume made up of percentages for it's composition. Maybe in a rewrite.
 
 
 

@@ -17,15 +17,6 @@ Accepts [items](#Item) and breaks them down into [chyme](#Chyme). Chyme is stead
 | output             | Object [chyme](#Chyme) contents and [items](#Item) are transferred to. In most cases the [intestines](#Intestine) |        |
 | gas_volume         | volume of gas in the stomach - not currently used.           | float  |
 
-### References
-
-Advances in the physiology of gastric emptying - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6850045/
-
----
-
-Effect of meal volume and energy density on the gastric emptying of carbohydrates  - https://pubmed.ncbi.nlm.nih.gov/4054524/
-
-`Caloric rate (kcal/min) = 0.1 + 0.0024 X volume (ml) + 0.96 x energy density (kcal/ml)`
 
 ## Item
 
@@ -160,7 +151,7 @@ Stomach empty rate depends on caloric density and volume, but also can be influe
 
 ## Digestion Outline
 
-Outlining only the process food and drink goes through.
+Outlining only the process food and drink goes through to identify what steps need to be coded.
 
 ### Stomach
 
@@ -168,7 +159,7 @@ Outlining only the process food and drink goes through.
 - food is broken down into chyme
 - stomach gradually passes chyme to intestine
 	- empty rate determined by energy density of chyme and volume
-	- small energy density and small intestine fullness may also slow empty rate
+	- energy density and small intestine fullness may also slow empty rate
 
 ### Intestine
 
@@ -187,3 +178,14 @@ The metabolism works in the background as nutrients and water is absorbed. Curre
 
 Absorbed calories currently have no purpose in this version, but may be used to drive other systems in the future. 
 
+## Sphincters!
+(idea)
+
+The all important rings of muscle that keeps things where they belong.
+Adding some kind of sphincter feature between the components of the digestive tract might make sense. The primary use in considering them is for pressure from the opposite direction of intended travel such as water filling the large intestine and reaching a pressure that pushes past the illeocecal valve of the small intestine, or stomach pressure overpowering the pyloric sphincter. Sphincter strength could also control the ability to hold in waste. The primary holdup would be calculating pressure which I'd have to do some research on to see how feasible that would be.   
+
+ - The lower esophageal sphincter
+ - pyloric sphincter
+ - ileocecal valve
+ - anal sphincter
+ - urethral sphincter
