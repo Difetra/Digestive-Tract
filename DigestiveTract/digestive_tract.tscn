@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgyqi7m23456v"]
+
+[ext_resource type="PackedScene" uid="uid://bhibe57jq6ogy" path="res://DigestiveTract/stomach.tscn" id="2_184o1"]
+[ext_resource type="Script" path="res://DigestiveTract/Intestine.gd" id="3_ohu8y"]
+[ext_resource type="PackedScene" uid="uid://bklg5gi4qq6jk" path="res://DigestiveTract/intestine_segment.tscn" id="4_1cpxr"]
+[ext_resource type="PackedScene" uid="uid://2xppft2tyglm" path="res://DigestiveTract/bladder.tscn" id="5_wbyia"]
+
+[node name="Digestive_Tract" type="Node"]
+
+[node name="Stomach" parent="." instance=ExtResource("2_184o1")]
+offset_top = 190.0
+offset_bottom = 318.0
+
+[node name="Intestine" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 960.0
+offset_top = 334.0
+offset_right = 1088.0
+offset_bottom = 462.0
+script = ExtResource("3_ohu8y")
+
+[node name="Intestine_Segment" parent="Intestine" instance=ExtResource("4_1cpxr")]
+layout_mode = 0
+offset_top = 0.0
+offset_bottom = 128.0
+
+[node name="Bladder" parent="." instance=ExtResource("5_wbyia")]
+offset_top = 478.0
+offset_bottom = 606.0

@@ -21,7 +21,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-    delta = delta * time_scale / 60
+    delta = delta / 60 * time_scale
     var ratio = min(1, water/2000) # 2,000ml water 
     var adjusted_excretion = excretion_rate * (1 - pow(1 - ratio, 4)) #quartic easing up to excretion_rate. 
-    bladder.add((adjusted_excretion/60) * delta)
+    bladder.add(adjusted_excretion * delta)
+    water -= adjusted_excretion * delta

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://2xppft2tyglm"]
+
+[ext_resource type="Script" path="res://DigestiveTract/Bladder.gd" id="1_l5tlk"]
+
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(0.835294, 0.537255, 0.537255, 1)
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
+
+[node name="Bladder" type="Label"]
+offset_left = 960.0
+offset_top = 480.0
+offset_right = 1088.0
+offset_bottom = 608.0
+theme_override_styles/normal = SubResource("1")
+text = "Bladder"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_l5tlk")

@@ -10,8 +10,6 @@ var digestibility: float =  0.2 #how easily is the item broken down into chyme. 
 var water_content: float = 0.1 #percentage of volume made up of water
 var integrity: float = 1 #how much of the item remains intact. Breakdown rate increases as integrity lowers simulating additional surface exposed by digestive processes.
 
-
-
 func weight() -> float:
     var vol_m = volume / 100
     return vol_m * density

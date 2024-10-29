@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bklg5gi4qq6jk"]
+
+[ext_resource type="Script" path="res://DigestiveTract/Intestine_Segment.gd" id="1_u6t6j"]
+
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(0.835294, 0.537255, 0.537255, 1)
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
+
+[node name="Intestine_Segment" type="Label"]
+offset_top = 3.0
+offset_right = 128.0
+offset_bottom = 131.0
+theme_override_styles/normal = SubResource("1")
+text = "Intestine"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_u6t6j")

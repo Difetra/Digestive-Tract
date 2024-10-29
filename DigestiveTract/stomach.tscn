@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhibe57jq6ogy"]
+
+[ext_resource type="Script" path="res://DigestiveTract/Stomach.gd" id="1_2nd0e"]
+
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(0.835294, 0.537255, 0.537255, 1)
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
+
+[node name="Stomach" type="Label"]
+offset_left = 960.0
+offset_top = 192.0
+offset_right = 1088.0
+offset_bottom = 320.0
+theme_override_styles/normal = SubResource("1")
+text = "Stomach"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_2nd0e")
